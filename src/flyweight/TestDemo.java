@@ -2,7 +2,7 @@ package flyweight;
 
 public class TestDemo {
 
-	private static final String names[] = { "Íõ", "æR", "Ïò", "Ìí·å", "ÔÆ" };
+	private static final String names[] = { "ç‹", "é¾", "æ·»å³°", "å‘", "äº‘" };
 
 	public static void main(String[] args) {
 
