@@ -142,16 +142,16 @@ public class TestDemo {
 ## 既に実装したJDKの例
 
 Integer#valueOfでFlyweightパターンが使われてるとのことで早速ソースを見てみた。
-```java TODO
+```java
 public static Integer valueOf(int i) {
-    if(i >= -128 && i <= IntegerCache.high)
-        return IntegerCache.cache[i + 128];
+    if(i >= IntegerCache.low  && i <= IntegerCache.high)
+        return IntegerCache.cache[i + (-IntegerCache.low)];
     else
         return new Integer(i);
 }
 ```
 
-cacheHighは基本的には127なので、つまり-128から127までのIntegerオブジェクトはあらかじめ作ってある。
+cacheHighは基本的には127で、IntegerCache.lowは-128なので、つまり-128から127までのIntegerオブジェクトはあらかじめ作ってある。
 以下のようなテストでちょっと確認してみる。
 ```java
 public class testInteger {
