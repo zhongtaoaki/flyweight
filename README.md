@@ -39,17 +39,17 @@
 
 会社員のインターフェースを作成
 
-~~~
+```java
 public interface Employee {
 	void work();
 }
-~~~
+```
 
 ### Step2
 
 プログラマーのクラスを作成
 
-~~~
+```java
 public class Programmer implements Employee {
 	
     private String name;
@@ -62,12 +62,12 @@ public class Programmer implements Employee {
 		System.out.println(name + "さんが仕事中です。");
 	}
 }
-~~~
+```
 ### Step3
 
 プログラマーのファクトリーを作成
 
-~~~
+```java
 public class EmployeeFactory {
 
 	private static final HashMap<String, Employee> progammerMap = new HashMap<>();
@@ -84,12 +84,12 @@ public class EmployeeFactory {
 		return programmer;
 	}
 }
-~~~
+```
 ### Step4
 
 テストクラス
 
-~~~
+```java
 public class TestDemo {
 
 	private static final String names[] = { "王", "鍾", "向", "添峰", "云" };
@@ -106,13 +106,13 @@ public class TestDemo {
 		return names[(int) (Math.random() * names.length)];
 	}
 }
-~~~
+```
 
 ### Step5
 
 実行すると
 
-~~~
+```
 鍾さんが準備しました。待機中です。
 鍾さんが仕事中です。
 王さんが準備しました。待機中です。
@@ -138,22 +138,22 @@ public class TestDemo {
 鍾さんが仕事中です。
 向さんが仕事中です。
 向さんが仕事中です。
-~~~
+```
 ## 既に実装したJDKの例
 
 Integer#valueOfでFlyweightパターンが使われてるとのことで早速ソースを見てみた。
-~~~TODO
+```java TODO
 public static Integer valueOf(int i) {
     if(i >= -128 && i <= IntegerCache.high)
         return IntegerCache.cache[i + 128];
     else
         return new Integer(i);
 }
-~~~
+```
 
 cacheHighは基本的には127なので、つまり-128から127までのIntegerオブジェクトはあらかじめ作ってある。
 以下のようなテストでちょっと確認してみる。
-~~~
+```java
 public class testInteger {
 	public static void main(String[] args) {
 		Integer a = 127;
@@ -175,10 +175,10 @@ public class testInteger {
 		System.out.println(bb == cc ? "bb == cc" : "bb != cc");
 	}
 }
-~~~
+```
 
 実行すると
-~~~
+```
 a == b
 a == c
 b == c
@@ -186,7 +186,7 @@ b == c
 aa != bb
 aa != cc
 bb != cc
-~~~
+```
 
 ## 後書き
 便利なデザインパターンだけど、欠点として少なくともシステムの複雑さをあげてしまう。
