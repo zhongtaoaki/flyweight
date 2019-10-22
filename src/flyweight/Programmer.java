@@ -10,6 +10,6 @@ public class Programmer implements Employee {
 
 	@Override
 	public void work() {
-		System.out.println(name + "さんが仕事中");
+		System.out.println(name + "さんが仕事中です。");
 	}
 }

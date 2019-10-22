@@ -12,7 +12,7 @@ public class EmployeeFactory {
 		if (programmer == null) {
 			programmer = new Programmer(name);
 			progammerMap.put(name, programmer);
-			System.out.println(name + "¤µ¤ó¤¬¥½¥Õ¥È¥·¥ó¥¯¤Ë¼ÓÈë¤·¤Þ¤·¤¿¡£");
+			System.out.println(name + "¤µ¤ó¤¬œÊ‚ä¤·¤Þ¤·¤¿¡£´ý™CÖÐ¤Ç¤¹¡£");
 		}
 		return programmer;
 	}
