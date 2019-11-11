@@ -50,6 +50,7 @@ public interface Employee {
 public class Programmer implements Employee {
 	
     private String name;
+
 	public Programmer(String name) {
 		this.name = name;
 	}
@@ -70,6 +71,7 @@ public class EmployeeFactory {
 	private static final HashMap<String, Employee> progammerMap = new HashMap<>();
 
 	public static Employee getEmployee(String name) {
+		
 		Programmer programmer = (Programmer) progammerMap.get(name);
 
 		if (programmer == null) {
@@ -138,7 +140,7 @@ public class TestDemo {
 ```
 ## 既に実装したJDKの例
 
-Integer#valueOfでFlyweightパターンが使われてるとのことで早速ソースを見てみた。
+Integer.valueOf()でFlyweightパターンが使われているので、早速ソースを見てみよう。
 ```java
 public static Integer valueOf(int i) {
     if(i >= IntegerCache.low  && i <= IntegerCache.high)
