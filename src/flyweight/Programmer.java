@@ -1,11 +1,9 @@
 package flyweight;
 
-public class Programmer implements Employee {
-
-	private String name;
+public class Programmer extends Employee {
 
 	public Programmer(String name) {
-		this.name = name;
+		super(name);
 	}
 
 	@Override

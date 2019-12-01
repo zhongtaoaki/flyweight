@@ -1,7 +1,13 @@
 package flyweight;
 
-public interface Employee {
+public abstract class Employee {
 
-	void work();
+	public String name;
+
+	public Employee(String name) {
+		this.name = name;
+	}
+
+	public abstract void work();
 
 }
