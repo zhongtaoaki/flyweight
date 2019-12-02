@@ -1,10 +1,10 @@
 package flyweight;
 
-import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class EmployeeFactory {
 
-	private static final HashMap<String, Employee> progammerMap = new HashMap<>();
+	private static final ConcurrentHashMap<String, Employee> progammerMap = new ConcurrentHashMap<>();
 
 	public static Employee getEmployee(String name) {
 		Programmer programmer = (Programmer) progammerMap.get(name);
@@ -12,7 +12,7 @@ public class EmployeeFactory {
 		if (programmer == null) {
 			programmer = new Programmer(name);
 			progammerMap.put(name, programmer);
-			System.out.println(name + "¤µ¤ó¤¬œÊ‚ä¤·¤Þ¤·¤¿¡£´ý™CÖÐ¤Ç¤¹¡£");
+			System.out.println(name + "ï¿½ï¿½ï¿½ó¤¬œÊ‚ä¤·ï¿½Þ¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Cï¿½Ð¤Ç¤ï¿½ï¿½ï¿½");
 		}
 		return programmer;
 	}

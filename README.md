@@ -49,10 +49,8 @@ public interface Employee {
 ```java
 public class Programmer implements Employee {
 	
-    private String name;
-
-	public Programmer(String name) {
-		this.name = name;
+    public Programmer(String name) {
+		super(name);
 	}
 
 	@Override
@@ -68,7 +66,7 @@ public class Programmer implements Employee {
 ```java
 public class EmployeeFactory {
 
-	private static final HashMap<String, Employee> progammerMap = new HashMap<>();
+	private static final ConcurrentHashMap<String, Employee> progammerMap = new ConcurrentHashMap<>();
 
 	public static Employee getEmployee(String name) {
 		
