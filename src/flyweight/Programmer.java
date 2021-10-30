@@ -1,13 +1,15 @@
 package flyweight;
 
+//缁ф壙路
 public class Programmer extends Employee {
 
 	public Programmer(String name) {
 		super(name);
 	}
 
+	//閲嶅啓鐖剁被鏂规硶
 	@Override
 	public void work() {
-		System.out.println(name + "さんが仕事中です。");
+		System.out.println(name + "寮�濮嬫惉鐮栦簡");
 	}
 }
